@@ -70,4 +70,4 @@ You don’t need to install anything manually, as all dependencies are already m
 This section is provided for reference only, to give you insight into how the project was set up.
 
 ## Dependencies
-- `npm install chart.js react-chartjs-2 react-router-dom`
+- `npm install chart.js react-chartjs-2 react-router-dom @reduxjs/toolkit react-redux`
