@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SearchBar() {
+export default function RecordSearchBar() {
   return (
     <div className='border border-black rounded-md p-2
     w-[820px] h-[50px] flex items-center gap-2
