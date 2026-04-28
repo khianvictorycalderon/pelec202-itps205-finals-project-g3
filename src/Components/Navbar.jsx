@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -11,7 +10,7 @@ const Navbar = () => {
         {/* --- Logo Section --- */}
         <div className="flex items-center space-x-3">
           <img
-            src="ghos-logo.jpg" //logo name here,
+            src="images/GHO_Logo.png"
             alt="Global Health Observatory System Logo"
             className="h-12 w-12 object-cover rounded-full bg-white p-1"
           />
