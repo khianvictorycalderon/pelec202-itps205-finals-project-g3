@@ -1,0 +1,174 @@
+/* Container and Layout */
+.gho-container {
+  background-color: #e0f7fa;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Header Styles */
+.gho-header {
+  background-color: #006064;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gho-logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.gho-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.gho-title h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.gho-subtitle {
+  font-size: 0.8rem;
+  margin: 0;
+  opacity: 0.7;
+}
+
+.gho-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.gho-search-container {
+  position: relative;
+}
+
+.gho-search-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Main Content */
+.gho-main {
+  padding: 20px;
+}
+
+.gho-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gho-main-title {
+  color: #006064;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.gho-stat-display {
+  display: flex;
+  align-items: flex-end;
+  color: #006064;
+}
+
+.gho-stat-value {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.gho-stat-unit {
+  font-size: 1rem;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+/* Content Grid */
+.gho-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.gho-info-card {
+  background-color: #b2ebf2;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.gho-sidebar-card {
+  background-color: #006064;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.gho-card-heading {
+  color: #006064;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.gho-card-heading:first-child {
+  margin-top: 0;
+}
+
+.gho-card-text {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Sidebar Specifics */
+.gho-sidebar-heading {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.gho-toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gho-toggle-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.gho-toggle-btn.active {
+  background-color: #fff;
+  color: #006064;
+}
+
+.gho-link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.gho-link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.gho-link:hover {
+  text-decoration: underline;
+}
