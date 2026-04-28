@@ -8,7 +8,7 @@ const GlobalHealthObservatoryPage = () => {
     <div className="gho-container">
       <header className="gho-header">
         <div className="gho-logo-section">
-          <img src="your-logo-url.png" alt="GHO Logo" className="gho-logo" />
+          <img src="public/images/GHO_Logo.png" alt="GHO Logo" className="gho-logo" />
           <div className="gho-title">
          
           </div>
