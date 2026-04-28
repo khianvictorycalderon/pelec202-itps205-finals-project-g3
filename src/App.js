@@ -2,9 +2,8 @@ export default function App() {
 
   const handleClick = () => {
     alert("Redirecting to Global Health Data Dashboard...");
-    // window.location.href = "/dashboard"; // optional
   };
-
+  
   return (
     <div 
       className="h-screen bg-cover bg-center flex items-center justify-center relative"
@@ -13,10 +12,8 @@ export default function App() {
       }}
     >
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* Content */}
       <div className="relative z-10 text-center text-white px-6">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
           Global Health Observatory System
