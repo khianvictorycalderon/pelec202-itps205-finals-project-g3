@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import Hero from '../components/Hero';
 import { slideToTop } from '../utils';
+import Hero from '../components/Hero';
+import Statistics from '../components/Statistics';
 
 function LandingPage() {
 
@@ -12,6 +13,11 @@ function LandingPage() {
   return (
     <>
       <Hero/>
+
+      {/* For scrolling reference only */}
+      <div id="statistics-section"/>
+
+      <Statistics/>
     </>
   )
 }
