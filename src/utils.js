@@ -9,3 +9,12 @@ export const slideToID = (id) => {
       console.warn(`Element with id "${id}" not found.`);
     }
 };
+
+export const slideToTop = () => {
+  const scrollContainer = document.scrollingElement || document.documentElement;
+
+  scrollContainer.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
