@@ -2,23 +2,23 @@
 Our finals project as a collaborative team.
 
 ## Members:
-- Calderon, Khian Victory **(Team Leader)**
-- Calderon, Nichole Allyson
-- Diño, Yeasha
-- Alonzo, Sean
-- Perlada, Christian Abuel
-- San Agustin, Jhonas
-- Fernandez, Benedict
-- Mamac, John Michael
-- Pronton, Jonel
-- Jorquia, Jose
-- Genton, Lester
-- Talento, Mark Angelo
-- Llanora, Mark Anthony
-- Hufana, Syke Vincent
-- Esguerra, Nathaniel
-- Bermudez, Rommelgio
-- Tomo, Warren
+- [Calderon, Khian Victory **(Team Leader)**](https://github.com/khianvictorycalderon)
+- [Calderon, Nichole Allyson](https://github.com/alleysOonie)
+- [Diño, Yeasha](https://github.com/Yeasha-Mei-P-Dino)
+- [Alonzo, Sean](https://github.com/Incineradia)
+- [Perlada, Christian Abuel](https://github.com/C-Perlada)
+- [San Agustin, Jhonas](https://github.com/SA0817)
+- [Fernandez, Benedict](https://github.com/benedict1117)
+- [Mamac, John Michael](https://github.com/JM17mc)
+- [Pronton, Jonel](https://github.com/jnl06)
+- [Jorquia, Jose](https://github.com/josemariajorquia)
+- [Genton, Lester](https://github.com/ReleasedDevil)
+- [Talento, Mark Angelo](https://github.com/Newmatt360)
+- [Llanora, Mark Anthony](https://github.com/Markanthonyllanora)
+- [Hufana, Syke Vincent](https://github.com/SykeHufana)
+- [Esguerra, Nathaniel](https://github.com/NielEsguerra)
+- [Bermudez, Rommelgio](https://github.com/romgio)
+- [Tomo, Warren](https://github.com/renam0to)
 
 ---
 
