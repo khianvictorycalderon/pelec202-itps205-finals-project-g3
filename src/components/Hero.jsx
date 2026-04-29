@@ -1,9 +1,7 @@
+import { Link } from 'react-router-dom';
+import { slideToID } from '../utils';
+
 export default function Hero() {
-
-  const handleClick = () => {
-    alert("Redirecting to Global Health Data Dashboard...");
-  };
-
   return (
     <div 
       className="h-screen bg-cover bg-center flex items-center justify-center relative"
@@ -23,12 +21,21 @@ export default function Hero() {
           to improve public health worldwide.
         </p>
 
-        <button
-          onClick={handleClick}
-          className="bg-teal-500 hover:bg-teal-600 px-6 py-3 rounded-full text-lg font-semibold transition duration-300"
-        >
-          Explore Data
-        </button>
+        <div className="flex flex-col lg:flex-row gap-2 justify-center items-center">
+
+          <Link
+            to="/browse"
+            className="cursor-pointer bg-cyan-600 hover:bg-cyan-500 px-6 py-3 rounded-full text-lg font-semibold transition duration-300"
+          >Browse Data</Link>
+
+          <button
+            onClick={() => slideToID("statistics-section")}
+            className="cursor-pointer bg-teal-600 hover:bg-teal-500 px-6 py-3 rounded-full text-lg font-semibold transition duration-300"
+          >
+            Explore Statistics
+          </button>
+
+        </div>
       </div>
     </div>
   );
