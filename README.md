@@ -1,6 +1,9 @@
 # PELEC202 + ITPS205 ReactJS Finals Project
 Our finals project as a collaborative team.
 
+## Preview
+![Landing Page Preview](preview/landing_page.png)
+
 ## Members:
 - [Calderon, Khian Victory **(Team Leader)**](https://github.com/khianvictorycalderon)
 - [Calderon, Nichole Allyson](https://github.com/alleysOonie)
