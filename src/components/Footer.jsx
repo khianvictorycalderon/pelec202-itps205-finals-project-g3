@@ -13,22 +13,7 @@ export default function Footer() {
 
   return (
     <>
-      {/* Only custom CSS needed */}
-      <style>{`
-        @keyframes shimmer {
-          0% { background-position: 200% 0; }
-          100% { background-position: -200% 0; }
-        }
-        .shimmer {
-          background-size: 200% 100%;
-          animation: shimmer 3s linear infinite;
-        }
-      `}</style>
-
       <footer className="w-full bg-sky-900 text-white font-sans">
-        {/* Top bar */}
-        <div className="h-[3px] bg-gradient-to-r from-teal-600 via-cyan-300 to-teal-600 shimmer" />
-
         <div className="max-w-[1100px] mx-auto px-8 py-14">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 pb-10 border-b border-cyan-300/10">
 
