@@ -1,27 +1,29 @@
-export default function BrowseCard({ title, description, onClick }) {
+import { Link } from "react-router-dom";
+
+export default function BrowseCard({ title, url }) {
   return (
-    <div
-      onClick={onClick}
+    <Link
+      to={`/record/${url}`}
       className="
-        w-[820px] h-[150px] p-7 rounded-[0px]
-        border border-cyan-300
-        flex flex-col justify-center
-        relative overflow-hidden
-        cursor-pointer transition-transform duration-300 ease-in-out
-        hover:scale-105
+        w-full
+        p-5 sm:p-6
+        bg-white
+        border border-neutral-200
+        rounded-xl
+        shadow-sm
+        flex items-center justify-between
+        cursor-pointer
+        transition-all duration-200 ease-out
+        hover:shadow-md
+        hover:border-neutral-300
+        hover:-translate-y-[2px]
       "
     >
-      <div className="w-[300px] h-[4px] bg-cyan-300 rounded mb-2.5"></div>
-
-      <h2 className="text-[26px] font-bold mb-2.5 tracking-wide font-serif ">
+      <h2 className="text-base sm:text-lg font-medium text-neutral-800 truncate whitespace-nowrap overflow-hidden">
         {title}
       </h2>
 
-      <div className="w-[30px] h-[3px] bg-cyan-300 mb-2"></div>
-
-      <p className="text-[14px] leading-relaxed max-w-[90%] font-sans">
-        {description}
-      </p>
-    </div>
+      <div className="w-2 h-2 rounded-full bg-neutral-300 shrink-0 ml-4" />
+    </Link>
   );
-} 
+}
