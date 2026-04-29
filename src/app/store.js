@@ -1,1 +1,9 @@
-// Single source of truth
+/*
+
+    Single source of truth, 2 reducer:
+    reducer: {
+        browse: browseReducer,
+        record: recordReducer
+    }
+
+*/
