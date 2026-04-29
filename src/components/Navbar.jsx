@@ -33,7 +33,7 @@ const Navbar = () => {
               className="h-12 w-12 object-cover rounded-full bg-white p-1"
             />
             <span className="text-cyan-300 font-bold text-lg hidden sm:block">
-              Global Health Observatory
+              Global Health Observatory System
             </span>
           </div>
 
