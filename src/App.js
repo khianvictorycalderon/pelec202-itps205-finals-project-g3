@@ -12,8 +12,8 @@ function App() {
         <Route index element={<LandingPage />} />
         <Route path="/browse" element={<BrowsePage />} />
         <Route path="/record/:id" element={<RecordPage />} />
-        <Route path="*" element={<ErrorPage/>} />
       </Route>
+      <Route path="*" element={<ErrorPage/>} />
     </Routes>
   );
 }
