@@ -3,6 +3,9 @@ Our finals project as a collaborative team.
 
 ## Preview
 ![Landing Page Preview](preview/landing_page.png)
+![Statistics Section Preview](preview/statistics_section.png)
+![Browse Preview](preview/browse.png)
+![Record Preview](preview/record.png)
 
 ## Members:
 - [Calderon, Khian Victory **(Team Leader)**](https://github.com/khianvictorycalderon)
