@@ -6,7 +6,7 @@ export default function Hero() {
     <div 
       className="h-screen bg-cover bg-center flex items-center justify-center relative"
       style={{
-        backgroundImage: "url('/assets/bg-health.jpg')"
+        backgroundImage: "url('assets/bg-health.jpg')"
       }}
     >
       <div className="absolute inset-0 bg-black/60"></div>
