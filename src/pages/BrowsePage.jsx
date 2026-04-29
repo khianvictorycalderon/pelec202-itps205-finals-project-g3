@@ -17,7 +17,7 @@ function BrowsePage() {
 
     fetch(`${API_URL}/api.json`)
       .then((res) => res.json())
-      .then((res) => setData(res.value))
+      .then((res) => setData((res.value || []).slice(2)))
       .catch((err) => console.error(err));
   }, []);
 
