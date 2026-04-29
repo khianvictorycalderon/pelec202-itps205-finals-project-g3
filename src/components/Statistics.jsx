@@ -44,7 +44,7 @@ const LABELS = [
   "With Disability",
 ];
 
-const COLORS = ["#A5E3F9", "#29A888", "#0F52BA", "#ed29ff", "#ff29bb"];
+const COLORS = ["#06b6d4", "#14b8a6", "#0ea5e9", "#a855f7", "#ec4899"];
 
 export default function Statistics({
   barValues = [3, 5, 2, 4, 1],
@@ -52,13 +52,41 @@ export default function Statistics({
   doughnutValues = [3, 5, 2, 4, 1],
   lineValues = [3, 5, 2, 4, 1],
 }) {
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "bottom",
+        labels: {
+          color: "#334155",
+          font: { size: 10 },
+        },
+      },
+      tooltip: {
+        enabled: true,
+      },
+    },
+    scales: {
+      x: {
+        ticks: { color: "#475569" },
+        grid: { display: false },
+      },
+      y: {
+        ticks: { color: "#475569" },
+        grid: { color: "rgba(100, 116, 139, 0.15)" },
+      },
+    },
+  };
+
   const barData = {
     labels: LABELS,
     datasets: [
       {
-        label: "Population Health Status",
+        label: "Health Status",
         data: barValues,
         backgroundColor: COLORS,
+        borderRadius: 8,
       },
     ],
   };
@@ -67,9 +95,10 @@ export default function Statistics({
     labels: LABELS,
     datasets: [
       {
-        label: "Population Health Status",
+        label: "Health Status",
         data: pieValues,
         backgroundColor: COLORS,
+        borderWidth: 0,
       },
     ],
   };
@@ -78,9 +107,11 @@ export default function Statistics({
     labels: LABELS,
     datasets: [
       {
-        label: "Disease & Diagnosis Data",
+        label: "Diagnosis Overview",
         data: doughnutValues,
         backgroundColor: COLORS,
+        borderWidth: 0,
+        cutout: "65%",
       },
     ],
   };
@@ -89,39 +120,57 @@ export default function Statistics({
     labels: LABELS,
     datasets: [
       {
-        label: "Disability & Functional Status",
+        label: "Trend",
         data: lineValues,
-        borderColor: "#3b82f6",
-        backgroundColor: "#93c5fd",
+        borderColor: "#06b6d4",
+        backgroundColor: "rgba(6, 182, 212, 0.15)",
         fill: true,
+        tension: 0.4,
+        pointBackgroundColor: "#06b6d4",
       },
     ],
   };
 
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: { position: "top" },
-    },
-  };
+  const ChartCard = ({ children }) => (
+    <div className="h-[220px] bg-white rounded-xl p-3 shadow-md border border-neutral-200 flex items-center justify-center">
+      <div className="w-full h-full">{children}</div>
+    </div>
+  );
 
   return (
-    <div className="flex flex-col items-center justify-center gap-8 p-6 bg-gray-100 min-h-screen">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl">
-        <div className="h-[300px] bg-white p-4 rounded-xl shadow">
-          <Bar data={barData} options={options} />
+    <div className="min-h-screen bg-neutral-100 text-slate-800 flex items-center justify-center px-4 py-10">
+
+      <div className="w-full max-w-6xl">
+
+        {/* Header */}
+        <div className="text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
+            Global Health Statistics
+          </h2>
+          <p className="text-slate-500 text-xs md:text-sm mt-1">
+            Population health insights and distribution overview
+          </p>
         </div>
 
-        <div className="h-[300px] bg-white p-4 rounded-xl shadow">
-          <Pie data={pieData} options={options} />
-        </div>
+        {/* Grid */}
+        <div className="grid grid-cols-2 gap-4">
 
-        <div className="h-[300px] bg-white p-4 rounded-xl shadow">
-          <Doughnut data={doughnutData} options={options} />
-        </div>
+          <ChartCard>
+            <Bar data={barData} options={options} />
+          </ChartCard>
 
-        <div className="h-[300px] bg-white p-4 rounded-xl shadow">
-          <Line data={lineData} options={options} />
+          <ChartCard>
+            <Pie data={pieData} options={options} />
+          </ChartCard>
+
+          <ChartCard>
+            <Doughnut data={doughnutData} options={options} />
+          </ChartCard>
+
+          <ChartCard>
+            <Line data={lineData} options={options} />
+          </ChartCard>
+
         </div>
       </div>
     </div>
