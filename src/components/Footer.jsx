@@ -34,7 +34,7 @@ export default function Footer() {
 
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-700/25 border border-cyan-300/20 text-cyan-300 text-xs font-mono">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  Prof: <a href="https://github.com/itzzmerov" target="_blank" className="underline hover:scale-[1.05] transition duration-300 cursor-pointer">John Rovie Balingbing</a>
+                  Prof: <a href="https://github.com/itzzmerov" rel="noopener noreferrer" target="_blank" className="underline hover:scale-[1.05] transition duration-300 cursor-pointer">John Rovie Balingbing</a>
               </div>
             </div>
 
