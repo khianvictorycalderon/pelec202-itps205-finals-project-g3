@@ -1,7 +1,0 @@
-/*
-
-    Expected exports:
-    - setBrowseInput
-    - setRecordInput
-
-*/
