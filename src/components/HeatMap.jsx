@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+//run this on terminal to install leaflet: "npm install leaflet"
 
 const HeatMap = () => {
   useEffect(() => {
