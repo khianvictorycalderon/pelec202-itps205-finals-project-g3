@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { slideToTop } from "../utils";
 import BrowseSearchBar from "../components/BrowseSeachBar";
-import API_URL from "../api";
+
+import { API_COVID_URL } from "../api";
 import BrowseCard from "../components/BrowseCard";
 
 const ITEMS_PER_PAGE = 10;
@@ -15,14 +16,19 @@ function BrowsePage() {
 
   useEffect(() => {
     slideToTop();
-    fetch(`${API_URL}/api.json`)
+    fetch(`${API_COVID_URL}/v3/covid-19/countries`)
       .then((res) => res.json())
-      .then((res) => setData((res.value || []).slice(2))) // Remove the first 2 entries, since it is just a metadata
+      .then((res) => {
+        console.log("API RESULT:", res);
+        setData(res);
+      })
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
   }, []);
 
-  useEffect(() => { setPage(1); }, [filter]);
+  useEffect(() => {
+    setPage(1);
+  }, [filter]);
 
   // Keyboard shortcut: "/" focuses the search input
   useEffect(() => {
@@ -35,24 +41,25 @@ function BrowsePage() {
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
-
   const filteredData = useMemo(() => {
-    return data.filter((item) =>
-      item.name.toLowerCase().includes(filter.toLowerCase())
+    return (data || []).filter((item) =>
+      (item.country || "").toLowerCase().includes(filter.toLowerCase()),
     );
   }, [data, filter]);
 
   const totalPages = Math.min(
     MAX_PAGES,
-    Math.max(1, Math.ceil(filteredData.length / ITEMS_PER_PAGE))
+    Math.max(1, Math.ceil(filteredData.length / ITEMS_PER_PAGE)),
   );
 
   const startIndex = (page - 1) * ITEMS_PER_PAGE;
-  const paginatedData = filteredData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const paginatedData = filteredData.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE,
+  );
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900">
-
       {/* ── Hero ── */}
       <div className="relative bg-sky-900 overflow-hidden">
         {/* Decorative grid */}
@@ -85,13 +92,21 @@ function BrowsePage() {
             {!loading && (
               <div className="flex gap-6 shrink-0">
                 <div className="text-center">
-                  <p className="text-cyan-400 text-[10px] font-mono uppercase tracking-widest">Total</p>
-                  <p className="text-white text-2xl font-bold">{data.length.toLocaleString()}</p>
+                  <p className="text-cyan-400 text-[10px] font-mono uppercase tracking-widest">
+                    Total
+                  </p>
+                  <p className="text-white text-2xl font-bold">
+                    {data.length.toLocaleString()}
+                  </p>
                 </div>
                 <div className="w-px bg-cyan-300/20" />
                 <div className="text-center">
-                  <p className="text-cyan-400 text-[10px] font-mono uppercase tracking-widest">Matches</p>
-                  <p className="text-white text-2xl font-bold">{filteredData.length.toLocaleString()}</p>
+                  <p className="text-cyan-400 text-[10px] font-mono uppercase tracking-widest">
+                    Matches
+                  </p>
+                  <p className="text-white text-2xl font-bold">
+                    {filteredData.length.toLocaleString()}
+                  </p>
                 </div>
               </div>
             )}
@@ -108,12 +123,20 @@ function BrowsePage() {
 
       {/* ── Content ── */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-
         {/* Result meta row */}
         {!loading && filteredData.length > 0 && (
           <div className="flex items-center justify-between mb-4">
             <p className="text-xs text-neutral-400">
-              Showing <span className="font-semibold text-neutral-600">{startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, filteredData.length)}</span> of <span className="font-semibold text-neutral-600">{filteredData.length}</span> datasets
+              Showing{" "}
+              <span className="font-semibold text-neutral-600">
+                {startIndex + 1}–
+                {Math.min(startIndex + ITEMS_PER_PAGE, filteredData.length)}
+              </span>{" "}
+              of{" "}
+              <span className="font-semibold text-neutral-600">
+                {filteredData.length}
+              </span>{" "}
+              datasets
             </p>
             {filter && (
               <button
@@ -144,8 +167,8 @@ function BrowsePage() {
           <div className="flex flex-col gap-2.5">
             {paginatedData.map((item, i) => (
               <BrowseCard
-                key={item.id || item.name}
-                title={item.name}
+                key={item.country}
+                title={item.country}
                 url={item.url}
                 index={startIndex + i}
               />
@@ -157,8 +180,19 @@ function BrowsePage() {
         {!loading && paginatedData.length === 0 && (
           <div className="flex flex-col items-center justify-center py-24 gap-3 text-center">
             <div className="w-14 h-14 rounded-2xl bg-neutral-100 flex items-center justify-center mb-1">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-7 text-neutral-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
               </svg>
             </div>
             <p className="font-medium text-neutral-500">No datasets found</p>
@@ -196,9 +230,11 @@ function BrowsePage() {
                 onClick={() => setPage(pageNumber)}
                 className={`
                   cursor-pointer w-9 h-9 text-sm rounded-xl border transition font-medium
-                  ${isActive
-                    ? "bg-sky-900 text-white border-sky-900 shadow-md shadow-sky-900/20"
-                    : "bg-white text-neutral-600 border-neutral-200 hover:bg-neutral-50 hover:border-neutral-300"}
+                  ${
+                    isActive
+                      ? "bg-sky-900 text-white border-sky-900 shadow-md shadow-sky-900/20"
+                      : "bg-white text-neutral-600 border-neutral-200 hover:bg-neutral-50 hover:border-neutral-300"
+                  }
                 `}
               >
                 {pageNumber}
