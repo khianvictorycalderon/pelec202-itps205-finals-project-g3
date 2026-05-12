@@ -11,7 +11,7 @@ function App() {
       <Route path="/" element={<Layout/>}>
         <Route index element={<LandingPage />} />
         <Route path="/browse" element={<BrowsePage />} />
-        <Route path="/record/:id" element={<RecordPage />} />
+        <Route path="/country/:id" element={<RecordPage />} />
       </Route>
       <Route path="*" element={<ErrorPage/>} />
     </Routes>
