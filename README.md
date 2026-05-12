@@ -5,7 +5,8 @@ Our finals project as a collaborative team.
 ![Landing Page Preview](preview/landing_page.png)
 ![Statistics Section Preview](preview/statistics_section.png)
 ![Browse Preview](preview/browse.png)
-![Record Preview](preview/record.png)
+![Country Heat Map Preview](preview/country_heatmap.png)
+![Country Metadata Preview](preview/country_metadata.png)
 
 ## Members:
 - [Calderon, Khian Victory **(Team Leader)**](https://github.com/khianvictorycalderon)
