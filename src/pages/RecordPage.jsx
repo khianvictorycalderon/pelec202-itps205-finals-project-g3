@@ -4,6 +4,7 @@ import { slideToTop } from '../utils';
 import API_URL from '../api';
 import RecordCard from '../components/RecordCard';
 import RecordSearchBar from '../components/RecordSearchBar';
+import HeatMap from "../components/HeatMap";
 
 const ITEMS_PER_PAGE = 12;
 const MAX_PAGES = 10;
@@ -156,6 +157,16 @@ function RecordPage() {
           </div>
         </div>
       )}
+
+      {/* ── Map Section ── */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+        <div className="bg-white rounded-2xl shadow-lg border border-neutral-100 p-4">
+          <h2 className="text-sm font-semibold text-neutral-600 mb-3">
+            Global Map View
+          </h2>
+          <HeatMap />
+        </div>
+      </div>
 
       {/* ── States ── */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">

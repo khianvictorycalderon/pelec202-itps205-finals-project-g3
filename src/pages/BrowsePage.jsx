@@ -3,7 +3,6 @@ import { slideToTop } from "../utils";
 import BrowseSearchBar from "../components/BrowseSeachBar";
 import API_URL from "../api";
 import BrowseCard from "../components/BrowseCard";
-import HeatMap from "../components/HeatMap";
 
 const ITEMS_PER_PAGE = 10;
 const MAX_PAGES = 10;
@@ -104,16 +103,6 @@ function BrowsePage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-5 relative z-10">
         <div className="bg-white rounded-2xl shadow-lg border border-neutral-100 p-4">
           <BrowseSearchBar value={filter} onChange={setFilter} />
-        </div>
-      </div>
-
-      {/* ── Map Section ── */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-        <div className="bg-white rounded-2xl shadow-lg border border-neutral-100 p-4">
-          <h2 className="text-sm font-semibold text-neutral-600 mb-3">
-            Global Map View
-          </h2>
-          <HeatMap />
         </div>
       </div>
 
